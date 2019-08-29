@@ -8,9 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		96D258D22317F7AF00949FB8 /* GMTestPod.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D258D02317F7AF00949FB8 /* GMTestPod.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C5BF8A0C97651DB73AF27C05 /* libPods-GMTestPod.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 134B2904613CB4560D4A04A2 /* libPods-GMTestPod.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		134B2904613CB4560D4A04A2 /* libPods-GMTestPod.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GMTestPod.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		241EB4C6B48BA642F5F2E787 /* Pods-GMTestPod.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GMTestPod.debug.xcconfig"; path = "Target Support Files/Pods-GMTestPod/Pods-GMTestPod.debug.xcconfig"; sourceTree = "<group>"; };
+		416D70C4633889504D7A0AFB /* Pods-GMTestPod.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GMTestPod.release.xcconfig"; path = "Target Support Files/Pods-GMTestPod/Pods-GMTestPod.release.xcconfig"; sourceTree = "<group>"; };
 		96D258CD2317F7AF00949FB8 /* GMTestPod.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GMTestPod.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96D258D02317F7AF00949FB8 /* GMTestPod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMTestPod.h; sourceTree = "<group>"; };
 		96D258D12317F7AF00949FB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -21,17 +25,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5BF8A0C97651DB73AF27C05 /* libPods-GMTestPod.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1FA9099B522D68DF983ED535 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				241EB4C6B48BA642F5F2E787 /* Pods-GMTestPod.debug.xcconfig */,
+				416D70C4633889504D7A0AFB /* Pods-GMTestPod.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		2E78ACEE3666EAC2BB029007 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				134B2904613CB4560D4A04A2 /* libPods-GMTestPod.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		96D258C32317F7AF00949FB8 = {
 			isa = PBXGroup;
 			children = (
 				96D258CF2317F7AF00949FB8 /* GMTestPod */,
 				96D258CE2317F7AF00949FB8 /* Products */,
+				1FA9099B522D68DF983ED535 /* Pods */,
+				2E78ACEE3666EAC2BB029007 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,6 +95,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 96D258D52317F7B000949FB8 /* Build configuration list for PBXNativeTarget "GMTestPod" */;
 			buildPhases = (
+				1440AB24F67C24A9A380657D /* [CP] Check Pods Manifest.lock */,
 				96D258C82317F7AF00949FB8 /* Headers */,
 				96D258C92317F7AF00949FB8 /* Sources */,
 				96D258CA2317F7AF00949FB8 /* Frameworks */,
@@ -124,6 +150,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1440AB24F67C24A9A380657D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GMTestPod-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		96D258C92317F7AF00949FB8 /* Sources */ = {
@@ -260,6 +311,7 @@
 		};
 		96D258D62317F7B000949FB8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 241EB4C6B48BA642F5F2E787 /* Pods-GMTestPod.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -284,6 +336,7 @@
 		};
 		96D258D72317F7B000949FB8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 416D70C4633889504D7A0AFB /* Pods-GMTestPod.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;

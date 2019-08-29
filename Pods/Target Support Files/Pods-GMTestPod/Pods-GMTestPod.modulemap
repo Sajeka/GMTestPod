@@ -1,0 +1,6 @@
+module Pods_GMTestPod {
+  umbrella header "Pods-GMTestPod-umbrella.h"
+
+  export *
+  module * { export * }
+}

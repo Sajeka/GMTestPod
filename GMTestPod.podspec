@@ -26,6 +26,9 @@ s.source = { :git => "https://github.com/Sajeka/GMTestPod.git",
 # 7
 s.framework = "UIKit"
 
+# 8
+s.source_files = "Classes"
+
 # 10
 s.swift_version = "5.0"
 
